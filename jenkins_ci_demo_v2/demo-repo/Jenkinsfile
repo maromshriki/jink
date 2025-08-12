@@ -16,10 +16,10 @@ pipeline {
       steps { sh 'docker build -t $IMAGE_NAME jenkins_ci_demo_v2/demo-repo/' }
     }
     stage('Unit Tests') {
-      steps { sh 'docker run --rm $IMAGE_NAME pytest -q tests/test_unit_*' }
+      steps { sh 'docker run --rm $IMAGE_NAME pytest -q ./tests/test_unit_*' }
     }
     stage('Integration Tests') {
-      steps { sh 'docker run --rm -p 5000:5000 $IMAGE_NAME pytest -q tests/test_integration_*' }
+      steps { sh 'docker run --rm -p 5000:5000 $IMAGE_NAME pytest -q ./tests/test_integration_*' }
     }
     stage('Push Image (optional)') {
       when { expression { return env.PUSH_IMAGE == "true" } }
