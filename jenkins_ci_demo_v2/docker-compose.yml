@@ -10,6 +10,7 @@ services:
     environment:
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
       - CASC_JENKINS_CONFIG=/usr/share/jenkins/ref/casc.yaml
+      - hudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=True
     volumes:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock

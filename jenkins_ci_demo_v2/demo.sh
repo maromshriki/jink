@@ -7,7 +7,7 @@ msg="${2:-demo change}"
 
 case "$cmd" in
   up)
-    docker compose up -d --build
+    docker-compose up -d --build
     echo
     echo ">>> Jenkins: http://localhost:8080  (admin/admin123)"
     echo ">>> Job 'Demo-CI-Pipeline' points to ./demo-repo"
