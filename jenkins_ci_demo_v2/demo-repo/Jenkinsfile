@@ -5,7 +5,6 @@ pipeline {
   environment {
     IMAGE_NAME = "demoapp:ci"
     REGISTRY = "localhost:5000" 
-    JAVA_ARGS="$JAVA_ARGS -Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true"
     PUSH_IMAGE = "false"   // set to "true" to push to local registry
   }
 

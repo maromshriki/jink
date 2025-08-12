@@ -22,7 +22,7 @@ jobs:
           cpsScm {
             scm {
               git {
-                remote { url('file:///demo-repo') }
+                remote { url('https://github.com/maromshriki/jink.git') }
                 branch('*/main')
               }
             }
